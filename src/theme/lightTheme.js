@@ -44,6 +44,11 @@ export const lightTheme = createTheme({
     fontSize: 12,
     fontFamily: ['Nunito'],
 
+    h2: {
+      fontSize: 54,
+      lineHeight: '74px',
+    },
+
     h3: {
       fontSize: 44,
       lineHeight: '60px',

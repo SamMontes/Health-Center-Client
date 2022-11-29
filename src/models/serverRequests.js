@@ -1,6 +1,5 @@
+import { API_HOST } from 'config';
 import axios from 'lib/http';
-
-export const API_HOST = 'https://health-server-production.up.railway.app';
 
 export const serverPost = ({ url = '', data = {}, onFinish = () => {} }) => {
   axios

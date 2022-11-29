@@ -1,15 +1,13 @@
-import { MSG_INPUT_ALL } from 'constants/messages';
 import {
   ERR_VALIDATION_EMAIL,
-  ERR_VALIDATION_PASSWORD,
+  ERR_VALIDATION_PASSWORD, MSG_INPUT_ALL
 } from 'constants/messages';
 import { WARNING } from 'constants/strings';
-import { checkPassword } from 'lib/strings';
-import { checkEmail } from 'lib/strings';
+import { checkEmail, checkPassword } from 'lib/strings';
 import { login } from 'models/userModel';
 import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export default function useLoginForm() {
@@ -18,7 +16,7 @@ export default function useLoginForm() {
 
   const { enqueueSnackbar } = useSnackbar();
 
-  const isAuth = useSelector((state) => state?.auth?.isAuth);
+  // const isAuth = useSelector((state) => state?.auth?.isAuth);
 
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [formError, setFormError] = useState({ email: '', password: '' });
@@ -53,6 +51,7 @@ export default function useLoginForm() {
               payload: { isAuth: true, token: res?.token, user: res },
             });
             enqueueSnackbar('Successfully logged in', { variant: 'success' });
+            navigate('/');
           } else {
             enqueueSnackbar(err?.message, { variant: WARNING });
           }
@@ -74,12 +73,12 @@ export default function useLoginForm() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData]);
 
-  useEffect(() => {
-    if (isAuth) {
-      navigate('/');
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isAuth]);
+  // useEffect(() => {
+  //   if (isAuth) {
+  //     navigate('/');
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [isAuth]);
 
   return {
     formData,
