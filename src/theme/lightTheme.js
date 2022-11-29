@@ -65,9 +65,15 @@ export const lightTheme = createTheme({
     },
 
     h6: {
-      fontSize: 16,
+      fontSize: 18,
       lineHeight: '21px',
     },
+
+    body2: {
+      fontSize: 14,
+      lineHeight: '19px',
+    },
+
     button: { textTransform: 'capitalize' },
   },
   components: {
@@ -79,6 +85,10 @@ export const lightTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      styleOverrides: {
+        root: { borderRadius: 22 },
+      },
+    },
   },
-  shape: { borderRadius: 22 },
 });

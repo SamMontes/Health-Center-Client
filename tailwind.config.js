@@ -43,6 +43,10 @@ module.exports = {
       borderRadius: {
         '4xl': '2rem',
       },
+
+      boxShadow: {
+        card: '0px 0px 13px rgba(0, 7, 26, 0.2)',
+      },
     },
   },
   plugins: [],

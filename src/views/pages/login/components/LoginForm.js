@@ -35,6 +35,7 @@ export default function LoginForm() {
                 <Person />
               </InputAdornment>
             ),
+            className: 'rounded-3xl',
           }}
         />
       </div>
@@ -57,6 +58,7 @@ export default function LoginForm() {
                 <Key />
               </InputAdornment>
             ),
+            className: 'rounded-3xl',
           }}
         />
       </div>

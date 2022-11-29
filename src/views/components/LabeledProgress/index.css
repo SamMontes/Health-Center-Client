@@ -1,0 +1,13 @@
+.fill-bg-left-right {
+  display: block;
+  background: linear-gradient(to right, #3b72ff 50%, transparent 0);
+  background-size: 200% 100%;
+  background-position: right;
+  animation: makeItfadeIn 1s 0s forwards;
+}
+
+@keyframes makeItfadeIn {
+  100% {
+    background-position: left;
+  }
+}

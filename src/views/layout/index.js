@@ -3,11 +3,15 @@ import { Outlet } from 'react-router-dom';
 import Footer from './footer';
 import Header from './header';
 
-export default function Layout() {
+export default function Layout({ isCenter = false }) {
   return (
     <div className='min-h-screen flex flex-col items-stretch'>
       <Header />
-      <div className='flex-grow bg-white-light-blue flex flex-col items-stretch justify-center h-full'>
+      <div
+        className={`flex-grow bg-white-light flex flex-col items-stretch ${
+          isCenter ? 'justify-center' : ''
+        }`}
+      >
         <Outlet />
       </div>
       <Footer />

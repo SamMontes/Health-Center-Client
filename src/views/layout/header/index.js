@@ -44,9 +44,11 @@ export default function Header() {
             >
               {isAuth ? (
                 <Grid item>
-                  <Button variant='contained' size='small'>
-                    Inicio
-                  </Button>
+                  <Link to='/appointment'>
+                    <Button variant='contained' size='small'>
+                      Inicio
+                    </Button>
+                  </Link>
                 </Grid>
               ) : !(location.pathname === '/login') ? (
                 <Grid item>

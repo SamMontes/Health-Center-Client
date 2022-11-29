@@ -20,6 +20,9 @@ export default function SignupForm() {
           size='small'
           type='email'
           required={true}
+          InputProps={{
+            className: 'rounded-3xl',
+          }}
           error={Boolean(formError?.email)}
           helperText={formError?.email ?? ''}
         />
@@ -34,6 +37,9 @@ export default function SignupForm() {
           onChange={handleChange}
           size='small'
           required={true}
+          InputProps={{
+            className: 'rounded-3xl',
+          }}
           error={Boolean(formError?.firstName)}
           helperText={formError?.firstName ?? ''}
         />
@@ -48,6 +54,9 @@ export default function SignupForm() {
           onChange={handleChange}
           size='small'
           required={true}
+          InputProps={{
+            className: 'rounded-3xl',
+          }}
           error={Boolean(formError?.lastName)}
           helperText={formError?.lastName ?? ''}
         />
@@ -63,6 +72,9 @@ export default function SignupForm() {
           size='small'
           type='password'
           required={true}
+          InputProps={{
+            className: 'rounded-3xl',
+          }}
           error={Boolean(formError?.password)}
           helperText={formError?.password ?? ''}
         />
@@ -78,6 +90,9 @@ export default function SignupForm() {
           size='small'
           type='password'
           required={true}
+          InputProps={{
+            className: 'rounded-3xl',
+          }}
           error={Boolean(formError?.passwordConfirm)}
           helperText={formError?.passwordConfirm ?? ''}
         />

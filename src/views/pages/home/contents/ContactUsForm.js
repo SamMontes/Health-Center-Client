@@ -4,12 +4,12 @@ import {
   InputAdornment,
   Stack,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material';
 import {
   ERR_VALIDATION_EMAIL,
   ERR_VALIDATION_TEXT,
-  MSG_INPUT_ALL
+  MSG_INPUT_ALL,
 } from 'constants/messages';
 import { WARNING } from 'constants/strings';
 import { checkEmail } from 'lib/strings';
@@ -74,6 +74,10 @@ export default function ContactUsForm() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formData]);
+
+  useEffect(() => {
+    setFormError({});
+  }, []);
 
   return (
     <Stack spacing={2}>
